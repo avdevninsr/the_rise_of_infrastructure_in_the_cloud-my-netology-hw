@@ -1,0 +1,64 @@
+avdevninsr1@russiantankist:~/tankist-terraform$ wget https://releases.hashicorp.com/terraform/1.13.5/terraform_1.13.5_linux_amd64.zip
+avdevninsr1@russiantankist:~/tankist-terraform$ unzip terraform_1.13.5_linux_amd64.zip
+avdevninsr1@russiantankist:~/tankist-terraform$ rm -r terraform_1.13.5_linux_amd64.zip
+avdevninsr1@russiantankist:~/tankist-terraform$ sudo mv terraform /bin/
+avdevninsr1@russiantankist:~/tankist-terraform$ terraform --version
+Terraform v1.13.5
+on linux_amd64
+
+avdevninsr1@russiantankist:~/tankist-terraform$ mkdir tankist-terraform
+avdevninsr1@russiantankist:~/tankist-terraform$ cd tankist-terraform
+avdevninsr1@russiantankist:~/tankist-terraform$ nano .terraformrc
+
+provider_installation {
+  network_mirror {
+    url = "https://terraform-mirror.yandexcloud.net/"
+    include = ["registry.terraform.io/*/*"]
+  }
+  network_mirror {
+    url = "https://registry.comcloud.xyz/"
+  }
+
+  network_mirror {
+    url = "https://registry.comcloud.xyz/"
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
+
+avdevninsr1@russiantankist:~/tankist-terraform$ sudo cp .terraformrc /
+avdevninsr1@russiantankist:~/tankist-terraform$ sudo cp .terraformrc /home
+avdevninsr1@russiantankist:~/tankist-terraform$ sudo cp .terraformrc /home/avdevninsr1
+avdevninsr1@russiantankist:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/avdevninsr1/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/avdevninsr1/.ssh/id_rsa
+Your public key has been saved in /home/avdevninsr1/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:rKrmbgGOANGHpwGNcB6pE3tWzo8/6ZCY2E1au+POGek avdevninsr1@russiantankist
+The key's randomart image is:
++---[RSA 3072]----+
+|=*oo             |
+|+o*.+            |
+|.+.O             |
+|* + o  .         |
+|+=  oo  S        |
+|.+.B.+..         |
+|. =.B...         |
+|  oo.*+          |
+| =++Eo..         |
++----[SHA256]-----+
+avdevninsr1@russiantankist:~$ ls -la ~/.ssh
+total 16
+drwx------ 2 avdevninsr1 avdevninsr1 4096 окт 26 21:08 .
+drwxr-x--- 7 avdevninsr1 avdevninsr1 4096 окт 26 19:48 ..
+-rw------- 1 avdevninsr1 avdevninsr1    0 авг 24 11:34 authorized_keys
+-rw------- 1 avdevninsr1 avdevninsr1 2610 окт 26 21:08 id_rsa
+-rw-r--r-- 1 avdevninsr1 avdevninsr1  580 окт 26 21:08 id_rsa.pub
+
+Передача открытого ключа на "подчинённый" хост
+
+avdevninsr1@russiantankist:~$ ssh-copy-id tankist@<bastion-ip>

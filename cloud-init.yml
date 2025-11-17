@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - name: tankist
+    groups: sudo
+    shell: /bin/bash
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkE3I5XU5chpw2dQn1vMV5HohPabyT+Iv50QDqUwj6mJMHRAwK6/qCzLnmiRvzIBOr3oGh3YFknXhVEkw3HceVPWV3I6MfMyk+NK30CLNX4xh0BGBkyQ9lbLqtsEBS723gwKoDAcN0bgqTkKBhB3+MXhcRJiNzEv8rZKVru/ZZiS76bCEFJNjlEVqYQQDv16DPxLu8eZeiNljArZM+0VjAFR3GBaqWP9EuN1JoHg8uBJtmaVFSHRq0jGDSkahrRhGsx3JBPIxzE5aU/iMf7jWynRUi4yQaWmEQ079a1ufVgxFTYSk6eN20humfCVxpHbeAMdVAFxpQdW/bnta2UlqjCK2QymydpYhW2w0vrh8hNdPdpWyw1Nd5nsicmzZRsa0jPOKqid/AOUHCCtoln4jj4OKtJ3vGInpBaLp1O1XXZynj4iZJbHJg9p5iGXeKJ9k+Yl9fKWgDzICO+VIsxJsx+zAsfVS9EWBvwVYfZhlBgOA8YyAF3UBgmxTqV869q8E= avdevninsr1@russiantankist

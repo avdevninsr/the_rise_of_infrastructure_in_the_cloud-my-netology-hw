@@ -1,0 +1,1 @@
+avdevninsr1@russiantankist:~/tankist-terraform$ ssh -J tankist@178.154.205.232 tankist@10.0.2.19
